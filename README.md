@@ -2,6 +2,12 @@
 
 Home dashboard for children commute reminders using LTA Bus Arrival.
 
+For setup on another laptop, phone, Render, and MacroDroid, read:
+
+```text
+OPERATION_MANUAL.md
+```
+
 ## Current routes
 
 - Weekday: bus 61, `14131` to `11291`, deadline `06:45`
