@@ -1,0 +1,138 @@
+{
+  "timezone": "Asia/Singapore",
+  "originStopCode": "14131",
+  "homeWalkMinutes": 5,
+  "alertsBeforeMinutes": [15, 10, 8],
+  "messages": {
+    "prepare": "Please get your bag, key and wear your shoes.",
+    "leaveNow": "You need to go right now. Hurry."
+  },
+  "commuteGroups": [
+    {
+      "id": "to-school",
+      "label": "Going to school",
+      "emptyMessage": "No active school trip right now."
+    },
+    {
+      "id": "from-school",
+      "label": "Coming back from school",
+      "emptyMessage": "No active trip home right now."
+    }
+  ],
+  "routes": [
+    {
+      "id": "weekday-school-61",
+      "label": "Weekday school bus 61",
+      "group": "to-school",
+      "days": ["MON", "TUE", "WED", "THU", "FRI"],
+      "activeFrom": "06:00",
+      "deadline": "06:45",
+      "alertsBeforeMinutes": [20, 15, 10, 9, 8, 7],
+      "leaveNowMinute": 7,
+      "scheduleWindow": {
+        "from": "06:00",
+        "until": "06:30"
+      },
+      "plannedSchedule": [
+        {
+          "time": "06:08-06:12",
+          "label": "Earliest special 61",
+          "note": "Best target bus"
+        },
+        {
+          "time": "06:20-06:25",
+          "label": "First regular 61",
+          "note": "Usually still workable"
+        },
+        {
+          "time": "06:25-06:30",
+          "label": "Next 61",
+          "note": "Tight, use only if live arrival looks early"
+        }
+      ],
+      "originStopCode": "14131",
+      "destinationStopCode": "11291",
+      "destinationLabel": "Cold Storage Jelita",
+      "services": ["61"],
+      "destinationWalkMinutes": 6,
+      "bufferMinutes": 5,
+      "travelMinMinutes": 27,
+      "travelMaxMinutes": 40
+    },
+    {
+      "id": "weekday-home-61",
+      "label": "Weekday home bus 61",
+      "group": "from-school",
+      "days": ["MON", "TUE", "WED", "THU", "FRI"],
+      "activeFrom": "13:50",
+      "deadline": "14:30",
+      "checkMode": "live-only",
+      "reminderStart": "14:00",
+      "alertsBeforeMinutes": [15, 10, 8, 5, 3, 1],
+      "automation": {
+        "enabled": true
+      },
+      "scheduleWindow": {
+        "from": "13:50",
+        "until": "14:30"
+      },
+      "plannedSchedule": [
+        {
+          "time": "13:50-14:05",
+          "label": "First home bus window",
+          "note": "Watch live arrival at 11299"
+        },
+        {
+          "time": "14:05-14:20",
+          "label": "Main home bus window",
+          "note": "Best time to check"
+        },
+        {
+          "time": "14:20-14:30",
+          "label": "Last home bus window",
+          "note": "Use if live arrival is still available"
+        }
+      ],
+      "originStopCode": "11299",
+      "destinationStopCode": "14139",
+      "destinationLabel": "Caribbean at Keppel Bay",
+      "services": ["61"],
+      "destinationWalkMinutes": 5,
+      "bufferMinutes": 5,
+      "travelMinMinutes": 27,
+      "travelMaxMinutes": 40
+    },
+    {
+      "id": "saturday-morning-97",
+      "label": "Saturday morning bus 97",
+      "group": "to-school",
+      "days": ["SAT"],
+      "activeFrom": "06:30",
+      "deadline": "08:45",
+      "originStopCode": "14131",
+      "destinationStopCode": "28301",
+      "destinationLabel": "Blk 131",
+      "services": ["97"],
+      "destinationWalkMinutes": 3,
+      "bufferMinutes": 5,
+      "travelMinMinutes": 53,
+      "travelMaxMinutes": 53
+    },
+    {
+      "id": "saturday-afternoon-heng-mui-keng",
+      "label": "Saturday afternoon to Opp Heng Mui Keng Terr",
+      "group": "to-school",
+      "days": ["SAT"],
+      "activeFrom": "13:30",
+      "deadline": "16:00",
+      "originStopCode": "14131",
+      "destinationStopCode": "16061",
+      "destinationLabel": "Opp Heng Mui Keng Terr",
+      "services": ["143", "30", "10", "188"],
+      "destinationWalkMinutes": 13,
+      "bufferMinutes": 5,
+      "travelMinMinutes": null,
+      "travelMaxMinutes": null
+    }
+  ]
+}

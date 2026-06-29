@@ -1,0 +1,26 @@
+services:
+  - type: web
+    name: singapore-bus-alert
+    env: node
+    plan: starter
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: HOST
+        value: 0.0.0.0
+      - key: ALLOW_SYSTEM_VOICE
+        value: false
+      - key: ENABLE_HOME_SMS
+        value: true
+      - key: SMS_DELIVERY
+        value: phone
+      - key: ENABLE_XIAOMI_MESSAGE
+        value: false
+      - key: SMS_POLL_INTERVAL_SECONDS
+        value: 60
+      - key: LTA_ACCOUNT_KEY
+        sync: false
+      - key: DASHBOARD_TOKEN
+        sync: false
+      - key: SMS_TO_NUMBER
+        sync: false

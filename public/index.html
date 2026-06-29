@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bus Alert</title>
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body>
+    <main class="shell">
+      <section id="login" class="login" hidden>
+        <h2>Family access</h2>
+        <p>Enter the dashboard code to open the bus helper.</p>
+        <form id="login-form">
+          <input id="token-input" type="password" autocomplete="current-password" placeholder="Access code">
+          <button type="submit">Open</button>
+        </form>
+      </section>
+
+      <section class="status-bar">
+        <div>
+          <div class="eyebrow">School Bus Helper</div>
+          <h1 id="clock">--:--</h1>
+          <p class="subtitle">Check the bus to school and the bus coming home.</p>
+          <p id="voice-name" class="voice-name">Voice not enabled yet</p>
+        </div>
+        <div class="voice-actions">
+          <button id="voice-toggle" type="button">Enable voice</button>
+          <button id="voice-test" type="button">Test voice</button>
+          <button id="system-voice-test" type="button">Enable laptop voice</button>
+        </div>
+      </section>
+
+      <section id="alerts" class="alerts" aria-live="assertive"></section>
+      <section id="routes" class="routes"></section>
+    </main>
+
+    <script src="/app.js" type="module"></script>
+  </body>
+</html>

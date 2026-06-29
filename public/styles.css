@@ -1,0 +1,394 @@
+:root {
+  color-scheme: light;
+  --bg: #eef8ff;
+  --panel: #ffffff;
+  --text: #1f2a44;
+  --muted: #5d6b82;
+  --line: #c6d9ea;
+  --safe: #17824d;
+  --risky: #d98200;
+  --late: #cf2f2f;
+  --focus: #2563eb;
+  --sun: #ffd166;
+  --sky: #70c8ff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background:
+    linear-gradient(180deg, #bfe9ff 0%, #eef8ff 42%, #f7fbff 100%);
+  color: var(--text);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+button {
+  min-height: 58px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: #234b9b;
+  color: white;
+  font-size: 20px;
+  font-weight: 700;
+  padding: 0 22px;
+  box-shadow: 0 8px 18px rgba(35, 75, 155, 0.22);
+}
+
+button:disabled {
+  opacity: 0.74;
+}
+
+.voice-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: flex-end;
+}
+
+.shell {
+  width: min(1120px, 100%);
+  margin: 0 auto;
+  padding: 22px;
+}
+
+.status-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  min-height: 132px;
+  position: relative;
+  padding: 18px 0 8px;
+}
+
+.status-bar::after {
+  content: "";
+  width: 86px;
+  height: 86px;
+  position: absolute;
+  right: 0;
+  top: 18px;
+  border-radius: 50%;
+  background: var(--sun);
+  box-shadow: 0 0 0 14px rgba(255, 209, 102, 0.28);
+  z-index: -1;
+}
+
+.eyebrow {
+  color: #1f5f99;
+  font-size: 18px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+h1 {
+  margin: 4px 0 0;
+  font-size: 64px;
+  line-height: 1;
+}
+
+.subtitle {
+  max-width: 620px;
+  margin: 8px 0 0;
+  color: var(--muted);
+  font-size: 21px;
+  font-weight: 700;
+}
+
+.voice-name {
+  margin: 6px 0 0;
+  color: #385070;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.alerts {
+  display: grid;
+  gap: 12px;
+  margin: 10px 0 18px;
+}
+
+.login {
+  max-width: 520px;
+  margin: 12vh auto 0;
+  background: var(--panel);
+  border: 2px solid var(--line);
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 16px 34px rgba(31, 42, 68, 0.12);
+}
+
+.login h2 {
+  margin: 0 0 8px;
+  font-size: 34px;
+}
+
+.login p {
+  color: var(--muted);
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.login form {
+  display: flex;
+  gap: 10px;
+}
+
+.login input {
+  min-width: 0;
+  flex: 1;
+  border: 2px solid var(--line);
+  border-radius: 12px;
+  font-size: 20px;
+  padding: 0 14px;
+}
+
+.alert {
+  border: 4px solid var(--focus);
+  border-radius: 14px;
+  background: #fff7d6;
+  padding: 20px;
+  font-size: 30px;
+  font-weight: 800;
+  box-shadow: 0 10px 24px rgba(31, 42, 68, 0.12);
+}
+
+.routes {
+  display: grid;
+  gap: 22px;
+}
+
+.commute-group {
+  display: grid;
+  gap: 12px;
+}
+
+.group-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  border-bottom: 2px solid var(--line);
+  padding-bottom: 8px;
+}
+
+.group-head h2 {
+  margin: 0;
+  font-size: 30px;
+}
+
+.group-routes {
+  display: grid;
+  gap: 16px;
+}
+
+.route {
+  background: var(--panel);
+  border: 2px solid var(--line);
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 16px 34px rgba(31, 42, 68, 0.12);
+}
+
+.route-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 14px;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 14px;
+}
+
+.route-title {
+  margin: 0;
+  font-size: 31px;
+}
+
+.meta {
+  color: var(--muted);
+  font-size: 19px;
+  margin-top: 6px;
+  font-weight: 700;
+}
+
+.schedule-window {
+  display: inline-flex;
+  margin-top: 10px;
+  border: 2px solid #234b9b;
+  border-radius: 8px;
+  background: #edf4ff;
+  color: #173d82;
+  font-size: 18px;
+  font-weight: 800;
+  padding: 8px 10px;
+}
+
+.planned-schedule {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.planned-time {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 10px;
+  align-items: center;
+  min-height: 86px;
+  border: 2px solid var(--line);
+  border-radius: 8px;
+  background: #f6fbff;
+  padding: 12px;
+}
+
+.planned-clock {
+  color: #173d82;
+  font-size: 25px;
+  font-weight: 900;
+}
+
+.planned-label {
+  color: var(--text);
+  font-size: 18px;
+  font-weight: 900;
+}
+
+.route-errors {
+  display: grid;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.route-error {
+  border: 2px solid var(--late);
+  border-radius: 10px;
+  background: #fff0f0;
+  color: var(--late);
+  font-size: 18px;
+  font-weight: 800;
+  padding: 12px;
+}
+
+.bus-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.bus {
+  min-height: 215px;
+  border: 4px solid var(--line);
+  border-radius: 16px;
+  padding: 18px;
+  background: #f9fcff;
+  position: relative;
+  overflow: hidden;
+}
+
+.bus.safe {
+  border-color: var(--safe);
+  background: #e9f9ef;
+}
+
+.bus.risky {
+  border-color: var(--risky);
+  background: #fff4df;
+}
+
+.bus.late {
+  border-color: var(--late);
+  background: #fff0f0;
+}
+
+.bus.needs-travel-estimate {
+  border-color: var(--muted);
+}
+
+.bus.live {
+  border-color: var(--focus);
+  background: #eef6ff;
+}
+
+.bus-time {
+  font-size: 58px;
+  font-weight: 900;
+  margin-top: 4px;
+  line-height: 1.08;
+  overflow-wrap: anywhere;
+}
+
+.bus-caption {
+  margin-top: 14px;
+  color: var(--muted);
+  font-size: 17px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.bus-service {
+  display: inline-flex;
+  align-items: center;
+  min-height: 42px;
+  border-radius: 999px;
+  background: var(--text);
+  color: white;
+  font-size: 25px;
+  font-weight: 800;
+  padding: 0 14px;
+}
+
+.bus-status {
+  margin-top: 14px;
+  font-size: 22px;
+  font-weight: 800;
+}
+
+.safe .bus-status {
+  color: var(--safe);
+}
+
+.risky .bus-status {
+  color: var(--risky);
+}
+
+.late .bus-status {
+  color: var(--late);
+}
+
+.live .bus-status {
+  color: var(--focus);
+}
+
+.empty {
+  color: var(--muted);
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 20px;
+  font-size: 24px;
+  font-weight: 800;
+}
+
+@media (max-width: 760px) {
+  .status-bar,
+  .route-head {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .bus-list {
+    grid-template-columns: 1fr;
+  }
+
+  .planned-schedule {
+    grid-template-columns: 1fr;
+  }
+
+  h1 {
+    font-size: 44px;
+  }
+}
